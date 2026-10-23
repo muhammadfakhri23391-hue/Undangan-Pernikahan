@@ -126,6 +126,29 @@ section {
   text-transform: uppercase;
 }
 
+/* Foto pasangan berada di samping teks pada hero. */
+.hero-content {
+  max-width: 1120px;
+}
+
+.hero-couple-frame {
+  padding: 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 180px 180px 1rem 1rem;
+  background: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(5px);
+}
+
+.hero-couple-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 170px 170px 0.55rem 0.55rem;
+}
+
 /* Komponen konten */
 .countdown {
   max-width: 640px;

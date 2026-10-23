@@ -84,10 +84,10 @@
               <a class="nav-link" href="#mempelai">Mempelai</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#acara">Acara</a>
+              <a class="nav-link" href="#galeri">Galeri</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#galeri">Galeri</a>
+              <a class="nav-link" href="#acara">Acara</a>
             </li>
             <li class="nav-item"><a class="nav-link" href="#rsvp">RSVP</a></li>
           </ul>
@@ -98,41 +98,26 @@
     <main>
       <!-- Hero -->
       <section id="beranda" class="hero">
-        <div class="container hero-content text-center text-md-start py-5">
-          <p class="hero-date mb-4">Dengan penuh sukacita</p>
-          <h2 class="hero-title font-display mb-5">
-            Laras<br /><span class="fst-italic">&amp;</span> Bagas
-          </h2>
-          <p class="hero-date mb-4">Minggu, 25 Oktober 2026 · Surabaya</p>
-          <a href="#acara" class="btn btn-light rounded-0 px-4 py-2"
-            >Lihat Detail Acara</a
-          >
-        </div>
-      </section>
-
-      <!-- Countdown -->
-      <section class="py-5 py-md-6">
-        <div class="container py-lg-4">
-          <div class="text-center mb-4">
-            <p class="section-kicker mb-2">Menuju hari bahagia</p>
-            <h2 class="font-display section-title mb-0">Hitung Mundur</h2>
-          </div>
-          <div class="countdown row row-cols-4 g-0 text-center mx-auto">
-            <div class="col p-3 border-end">
-              <div id="days" class="font-display countdown-number">00</div>
-              <div class="countdown-label mt-2">Hari</div>
+        <div class="container hero-content py-5">
+          <div class="row align-items-center justify-content-center g-4 g-lg-5">
+            <div class="col-lg-7 text-center text-lg-start">
+              <p class="hero-date mb-4">Dengan penuh sukacita</p>
+              <h2 class="hero-title font-display mb-5">
+                Laras<br /><span class="fst-italic">&amp;</span> Bagas
+              </h2>
+              <p class="hero-date mb-4">Minggu, 25 Oktober 2026 · Surabaya</p>
+              <a href="#acara" class="btn btn-light rounded-0 px-4 py-2"
+                >Lihat Detail Acara</a
+              >
             </div>
-            <div class="col p-3 border-end">
-              <div id="hours" class="font-display countdown-number">00</div>
-              <div class="countdown-label mt-2">Jam</div>
-            </div>
-            <div class="col p-3 border-end">
-              <div id="minutes" class="font-display countdown-number">00</div>
-              <div class="countdown-label mt-2">Menit</div>
-            </div>
-            <div class="col p-3">
-              <div id="seconds" class="font-display countdown-number">00</div>
-              <div class="countdown-label mt-2">Detik</div>
+            <div class="col-9 col-sm-7 col-md-6 col-lg-4">
+              <div class="hero-couple-frame">
+                <img
+                  src="assets/images/fotoberdua.jpeg"
+                  alt="Foto Laras dan Bagas bersama"
+                  class="hero-couple-photo"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -163,7 +148,7 @@
             </p>
           </div>
           <div class="row g-4 justify-content-center">
-            <div class="col-md-5 col-lg-4">
+            <div class="col-md-5 col-lg-4 order-2">
               <article class="person-card p-4 text-center">
                 <img
                   class="portrait w-75 mb-4"
@@ -187,7 +172,7 @@
                 >
               </article>
             </div>
-            <div class="col-md-5 col-lg-4">
+            <div class="col-md-5 col-lg-4 order-1">
               <article class="person-card p-4 text-center">
                 <img
                   class="portrait w-75 mb-4"
@@ -302,6 +287,34 @@
               <span class="carousel-control-next-icon"></span
               ><span class="visually-hidden">Berikutnya</span>
             </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Countdown: diletakkan tepat sebelum detail rangkaian acara. -->
+      <section id="countdown" class="py-5 py-md-6">
+        <div class="container py-lg-4">
+          <div class="text-center mb-4">
+            <p class="section-kicker mb-2">Menuju hari bahagia</p>
+            <h2 class="font-display section-title mb-0">Hitung Mundur</h2>
+          </div>
+          <div class="countdown row row-cols-4 g-0 text-center mx-auto">
+            <div class="col p-3 border-end">
+              <div id="days" class="font-display countdown-number">00</div>
+              <div class="countdown-label mt-2">Hari</div>
+            </div>
+            <div class="col p-3 border-end">
+              <div id="hours" class="font-display countdown-number">00</div>
+              <div class="countdown-label mt-2">Jam</div>
+            </div>
+            <div class="col p-3 border-end">
+              <div id="minutes" class="font-display countdown-number">00</div>
+              <div class="countdown-label mt-2">Menit</div>
+            </div>
+            <div class="col p-3">
+              <div id="seconds" class="font-display countdown-number">00</div>
+              <div class="countdown-label mt-2">Detik</div>
+            </div>
           </div>
         </div>
       </section>
