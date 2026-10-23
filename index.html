@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Undangan pernikahan Laras dan Bagas" />
+    <title>Undangan Pernikahan Laras &amp; Bagas</title>
+
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="assets/css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Sampul undangan -->
+    <section id="invitationCover" aria-label="Sampul undangan">
+      <div class="cover-card">
+        <p class="section-kicker text-white-50 mb-4">The Wedding Of</p>
+        <h1 class="font-display display-2 mb-2">Laras &amp; Bagas</h1>
+        <p class="small text-uppercase mb-5">
+          Minggu, 25 Oktober 2026 · Surabaya
+        </p>
+        <p class="small text-uppercase text-white-50 mb-1">Kepada Yth.</p>
+        <p id="coverGuestName" class="font-display cover-name mb-4">
+          Bapak/Ibu/Saudara/i
+        </p>
+        <button
+          id="openInvitationButton"
+          class="btn btn-light rounded-0 px-4 py-2"
+          type="button"
+        >
+          <i class="bi bi-envelope-open me-2"></i>Buka Undangan
+        </button>
+      </div>
+    </section>
+
+    <!-- Backsound lokal: diputar setelah pengunjung membuka undangan. -->
+    <audio id="backgroundMusic" autoplay loop preload="metadata">
+      <source src="assets/llagu.mp3" type="audio/mpeg" />
+      Browser Anda tidak mendukung pemutar audio.
+    </audio>
+
+    <button
+      id="musicToggle"
+      class="music-toggle"
+      type="button"
+      aria-label="Putar musik"
+      aria-pressed="false"
+    >
+      <i class="bi bi-volume-up-fill" aria-hidden="true"></i>
+      <span>Musik</span>
+    </button>
+
+    <!-- Navigasi -->
+    <nav class="navbar navbar-expand-lg sticky-top" aria-label="Navigasi utama">
+      <div class="container py-1">
+        <a class="navbar-brand font-display" href="#beranda">L &amp; B</a>
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavigation"
+          aria-controls="mainNavigation"
+          aria-expanded="false"
+          aria-label="Buka navigasi"
+        >
+          <i class="bi bi-list fs-3"></i>
+        </button>
+        <div
+          id="mainNavigation"
+          class="collapse navbar-collapse justify-content-end"
+        >
+          <ul class="navbar-nav gap-lg-2 align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#mempelai">Mempelai</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#acara">Acara</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#galeri">Galeri</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#rsvp">RSVP</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero -->
+      <section id="beranda" class="hero">
+        <div class="container hero-content text-center text-md-start py-5">
+          <p class="hero-date mb-4">Dengan penuh sukacita</p>
+          <h2 class="hero-title font-display mb-5">
+            Laras<br /><span class="fst-italic">&amp;</span> Bagas
+          </h2>
+          <p class="hero-date mb-4">Minggu, 25 Oktober 2026 · Surabaya</p>
+          <a href="#acara" class="btn btn-light rounded-0 px-4 py-2"
+            >Lihat Detail Acara</a
+          >
+        </div>
+      </section>
+
+      <!-- Countdown -->
+      <section class="py-5 py-md-6">
+        <div class="container py-lg-4">
+          <div class="text-center mb-4">
+            <p class="section-kicker mb-2">Menuju hari bahagia</p>
+            <h2 class="font-display section-title mb-0">Hitung Mundur</h2>
+          </div>
+          <div class="countdown row row-cols-4 g-0 text-center mx-auto">
+            <div class="col p-3 border-end">
+              <div id="days" class="font-display countdown-number">00</div>
+              <div class="countdown-label mt-2">Hari</div>
+            </div>
+            <div class="col p-3 border-end">
+              <div id="hours" class="font-display countdown-number">00</div>
+              <div class="countdown-label mt-2">Jam</div>
+            </div>
+            <div class="col p-3 border-end">
+              <div id="minutes" class="font-display countdown-number">00</div>
+              <div class="countdown-label mt-2">Menit</div>
+            </div>
+            <div class="col p-3">
+              <div id="seconds" class="font-display countdown-number">00</div>
+              <div class="countdown-label mt-2">Detik</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kutipan pembuka -->
+      <section class="quote-section py-5">
+        <div class="container text-center">
+          <span class="quote-leaf" aria-hidden="true">❦</span>
+          <blockquote class="font-display quote-text mx-auto mb-3">
+            “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan
+            pasangan-pasangan untukmu agar kamu cenderung dan merasa tenteram
+            kepadanya.”
+          </blockquote>
+          <p class="section-kicker mb-0">QS. Ar-Rum: 21</p>
+        </div>
+      </section>
+
+      <!-- Mempelai -->
+      <section id="mempelai" class="py-5 py-md-6 bg-white">
+        <div class="container py-lg-4">
+          <div class="text-center mb-5">
+            <p class="section-kicker mb-2">Mempelai</p>
+            <h2 class="font-display section-title">Dua Hati, Satu Janji</h2>
+            <p class="text-secondary mx-auto mb-0 intro-text">
+              Dengan memohon rahmat dan ridho Allah SWT, kami mengundang
+              Bapak/Ibu/Saudara/i untuk berbagi kebahagiaan bersama kami.
+            </p>
+          </div>
+          <div class="row g-4 justify-content-center">
+            <div class="col-md-5 col-lg-4">
+              <article class="person-card p-4 text-center">
+                <img
+                  class="portrait w-75 mb-4"
+                  src="assets/images/laras.jpeg"
+                  alt="Potret Larasati Putri Wardhani"
+                />
+                <p class="section-kicker mb-1">The Bride</p>
+                <h3 class="font-display display-6 mb-2">
+                  Larasati Putri Wardhani, S.Ars.
+                </h3>
+                <p class="small text-secondary mb-2">
+                  Putri dari Bapak H. Rahmat Wardhana &amp; Ibu Hj. Ningsih
+                  Kusuma
+                </p>
+                <a
+                  class="social-link small"
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  ><i class="bi bi-instagram me-1"></i>@larasatiputri</a
+                >
+              </article>
+            </div>
+            <div class="col-md-5 col-lg-4">
+              <article class="person-card p-4 text-center">
+                <img
+                  class="portrait w-75 mb-4"
+                  src="assets/images/bagas.jpeg"
+                  alt="Potret Bagas Pratama Wijaya"
+                />
+                <p class="section-kicker mb-1">The Groom</p>
+                <h3 class="font-display display-6 mb-2">
+                  Bagas Pratama Wijaya, S.T.
+                </h3>
+                <p class="small text-secondary mb-2">
+                  Putra dari Bapak H. Dwi Pratama &amp; Ibu Hj. Ratna Wijaya
+                </p>
+                <a
+                  class="social-link small"
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  ><i class="bi bi-instagram me-1"></i>@bagaspratama</a
+                >
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Galeri -->
+      <section id="galeri" class="py-5 py-md-6">
+        <div class="container py-lg-4">
+          <div class="text-center mb-5">
+            <p class="section-kicker mb-2">Potret kebersamaan</p>
+            <h2 class="font-display section-title">Galeri Pre-Wedding</h2>
+          </div>
+          <div
+            id="weddingGallery"
+            class="carousel slide shadow-sm"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#weddingGallery"
+                data-bs-slide-to="0"
+                class="active"
+                aria-label="Foto 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#weddingGallery"
+                data-bs-slide-to="1"
+                aria-label="Foto 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#weddingGallery"
+                data-bs-slide-to="2"
+                aria-label="Foto 3"
+              ></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  class="d-block w-100 gallery-image"
+                  src="assets/images/gallery-1.jpg"
+                  alt="Pasangan berjalan bersama"
+                />
+                <div class="carousel-caption">
+                  <p class="section-kicker text-white mb-1">01 · Surabaya</p>
+                  <h3 class="font-display display-6">Senja di Kota Tua</h3>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img
+                  class="d-block w-100 gallery-image"
+                  src="assets/images/gallery-2.jpg"
+                  alt="Pasangan di taman"
+                />
+                <div class="carousel-caption">
+                  <p class="section-kicker text-white mb-1">02 · Jawa Timur</p>
+                  <h3 class="font-display display-6">
+                    Teduh Pagi di Hutan Pinus
+                  </h3>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img
+                  class="d-block w-100 gallery-image"
+                  src="assets/images/gallery-3.jpg"
+                  alt="Pasangan merayakan pertunangan"
+                />
+                <div class="carousel-caption">
+                  <p class="section-kicker text-white mb-1">03 · Surabaya</p>
+                  <h3 class="font-display display-6">Janji untuk Selamanya</h3>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#weddingGallery"
+              data-bs-slide="prev"
+            >
+              <span class="carousel-control-prev-icon"></span
+              ><span class="visually-hidden">Sebelumnya</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#weddingGallery"
+              data-bs-slide="next"
+            >
+              <span class="carousel-control-next-icon"></span
+              ><span class="visually-hidden">Berikutnya</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Acara -->
+      <section id="acara" class="py-5 py-md-6 bg-white">
+        <div class="container py-lg-4">
+          <div class="text-center mb-5">
+            <p class="section-kicker mb-2">Waktu &amp; tempat</p>
+            <h2 class="font-display section-title">Rangkaian Acara</h2>
+          </div>
+          <div class="row g-4 justify-content-center">
+            <div class="col-md-6 col-lg-5">
+              <article class="event-card p-4 p-md-5 text-center">
+                <i class="bi bi-heart event-icon"></i>
+                <p class="section-kicker mt-3 mb-1">Akad Nikah</p>
+                <h3 class="font-display display-6">Minggu, 25 Oktober 2026</h3>
+                <p class="fw-semibold mb-4">08.00 – 10.00 WIB</p>
+                <p class="mb-1 fw-semibold">
+                  Masjid Nasional Al-Akbar Surabaya
+                </p>
+                <p class="small text-secondary">
+                  Jl. Masjid Al Akbar Timur No. 1, Pagesangan, Surabaya
+                </p>
+                <a
+                  class="btn btn-outline-gold rounded-0 btn-sm px-3"
+                  href="https://maps.google.com/?q=Masjid+Nasional+Al+Akbar+Surabaya"
+                  target="_blank"
+                  rel="noreferrer"
+                  ><i class="bi bi-geo-alt me-1"></i>Buka Peta</a
+                >
+              </article>
+            </div>
+            <div class="col-md-6 col-lg-5">
+              <article class="event-card p-4 p-md-5 text-center">
+                <i class="bi bi-cup-hot event-icon"></i>
+                <p class="section-kicker mt-3 mb-1">Resepsi</p>
+                <h3 class="font-display display-6">Minggu, 25 Oktober 2026</h3>
+                <p class="fw-semibold mb-4">11.00 – 14.00 WIB</p>
+                <p class="mb-1 fw-semibold">
+                  Grand Ballroom Sheraton Surabaya Hotel
+                </p>
+                <p class="small text-secondary">
+                  Jl. Embong Malang No. 25–31, Surabaya
+                </p>
+                <a
+                  class="btn btn-outline-gold rounded-0 btn-sm px-3"
+                  href="https://maps.google.com/?q=Sheraton+Surabaya+Hotel"
+                  target="_blank"
+                  rel="noreferrer"
+                  ><i class="bi bi-geo-alt me-1"></i>Buka Peta</a
+                >
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kisah cinta -->
+      <section class="py-5 py-md-6">
+        <div class="container py-lg-4">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="text-center mb-5">
+                <p class="section-kicker mb-2">Perjalanan kami</p>
+                <h2 class="font-display section-title">Kisah Cinta</h2>
+              </div>
+              <div class="story-line ms-3 ms-md-5">
+                <article class="story-step pb-5">
+                  <p class="section-kicker mb-1">2019</p>
+                  <h3 class="font-display display-6">Pertemuan Pertama</h3>
+                  <p class="text-secondary mb-0">
+                    Berawal dari pertemuan sederhana di kampus, kami menemukan
+                    banyak kesamaan dalam obrolan yang tak pernah terasa cukup.
+                  </p>
+                </article>
+                <article class="story-step pb-5">
+                  <p class="section-kicker mb-1">2022</p>
+                  <h3 class="font-display display-6">Menjalin Komitmen</h3>
+                  <p class="text-secondary mb-0">
+                    Setelah melewati berbagai cerita dan doa, kami memutuskan
+                    untuk berjalan bersama menuju masa depan.
+                  </p>
+                </article>
+                <article class="story-step">
+                  <p class="section-kicker mb-1">2026</p>
+                  <h3 class="font-display display-6">Menuju Pernikahan</h3>
+                  <p class="text-secondary mb-0">
+                    Dengan restu keluarga, kami siap mengikat janji suci dan
+                    memulai babak baru dalam hidup kami.
+                  </p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Amplop digital -->
+      <section class="py-5 py-md-6 bg-white">
+        <div class="container py-lg-4">
+          <div class="text-center mb-5">
+            <p class="section-kicker mb-2">Tanda kasih</p>
+            <h2 class="font-display section-title">Amplop Digital</h2>
+            <p class="text-secondary mb-0">
+              Doa restu Anda adalah hadiah terindah. Jika berkenan memberi tanda
+              kasih, silakan gunakan rekening berikut.
+            </p>
+          </div>
+          <div class="row g-4 justify-content-center">
+            <div class="col-md-5 col-lg-4">
+              <article class="gift-card p-4">
+                <p class="section-kicker">Bank Central Asia</p>
+                <p class="font-display gift-number mb-1">0881234567</p>
+                <p class="small text-secondary">a.n. Larasati Putri Wardhani</p>
+                <button
+                  class="btn btn-outline-gold rounded-0 btn-sm copy-account"
+                  type="button"
+                  data-account="0881234567"
+                >
+                  <i class="bi bi-copy me-1"></i>Salin Nomor
+                </button>
+              </article>
+            </div>
+            <div class="col-md-5 col-lg-4">
+              <article class="gift-card p-4">
+                <p class="section-kicker">Bank Mandiri</p>
+                <p class="font-display gift-number mb-1">1420098765432</p>
+                <p class="small text-secondary">a.n. Bagas Pratama Wijaya</p>
+                <button
+                  class="btn btn-outline-gold rounded-0 btn-sm copy-account"
+                  type="button"
+                  data-account="1420098765432"
+                >
+                  <i class="bi bi-copy me-1"></i>Salin Nomor
+                </button>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RSVP -->
+      <section id="rsvp" class="py-5 py-md-6">
+        <div class="container py-lg-4">
+          <div class="text-center mb-5">
+            <p class="section-kicker mb-2">Buku tamu &amp; RSVP</p>
+            <h2 class="font-display section-title">
+              Konfirmasi &amp; Doa Restu
+            </h2>
+          </div>
+          <div class="row g-4 align-items-start">
+            <div class="col-lg-5">
+              <div class="rsvp-card p-4 p-md-5">
+                <h3 class="font-display display-6 mb-4">Kirim Ucapan</h3>
+                <form id="rsvpForm" novalidate>
+                  <div class="mb-3">
+                    <label class="form-label" for="guestName">Nama</label
+                    ><input
+                      id="guestName"
+                      class="form-control rounded-0"
+                      type="text"
+                      required
+                      autocomplete="name"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label" for="attendance"
+                      >Konfirmasi Kehadiran</label
+                    ><select id="attendance" class="form-select rounded-0">
+                      <option value="Hadir">Hadir</option>
+                      <option value="Masih Ragu">Masih Ragu</option>
+                      <option value="Tidak Hadir">Tidak Hadir</option>
+                    </select>
+                  </div>
+                  <div id="guestCountGroup" class="mb-3">
+                    <label class="form-label" for="guestCount"
+                      >Jumlah Tamu</label
+                    ><select id="guestCount" class="form-select rounded-0">
+                      <option value="1">1 orang</option>
+                      <option value="2">2 orang</option>
+                      <option value="3">3 orang</option>
+                      <option value="4">4 orang</option>
+                    </select>
+                  </div>
+                  <div class="mb-4">
+                    <label class="form-label" for="message"
+                      >Ucapan &amp; Doa</label
+                    ><textarea
+                      id="message"
+                      class="form-control rounded-0"
+                      rows="4"
+                      required
+                      placeholder="Tuliskan doa dan ucapan untuk mempelai..."
+                    ></textarea>
+                  </div>
+                  <button
+                    class="btn btn-gold rounded-0 w-100 py-2"
+                    type="submit"
+                  >
+                    Kirim Konfirmasi
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <div class="rsvp-card p-4 p-md-5">
+                <div
+                  class="d-flex flex-column flex-md-row justify-content-between gap-3 mb-4"
+                >
+                  <div>
+                    <h3 class="font-display display-6 mb-0">Ucapan Tamu</h3>
+                    <p class="small text-secondary mb-0">
+                      Disimpan di perangkat ini.
+                    </p>
+                  </div>
+                  <div
+                    class="btn-group align-self-md-start"
+                    role="group"
+                    aria-label="Filter ucapan"
+                  >
+                    <button
+                      class="btn btn-sm btn-outline-gold active filter-button"
+                      type="button"
+                      data-filter="Semua"
+                    >
+                      Semua</button
+                    ><button
+                      class="btn btn-sm btn-outline-gold filter-button"
+                      type="button"
+                      data-filter="Hadir"
+                    >
+                      Hadir</button
+                    ><button
+                      class="btn btn-sm btn-outline-gold filter-button"
+                      type="button"
+                      data-filter="Tidak Hadir"
+                    >
+                      Tidak hadir
+                    </button>
+                  </div>
+                </div>
+                <div class="row text-center border-top border-bottom py-3 mb-3">
+                  <div class="col border-end">
+                    <strong id="presentCount" class="d-block font-display fs-2"
+                      >0</strong
+                    ><span class="countdown-label">Hadir</span>
+                  </div>
+                  <div class="col border-end">
+                    <strong id="maybeCount" class="d-block font-display fs-2"
+                      >0</strong
+                    ><span class="countdown-label">Ragu</span>
+                  </div>
+                  <div class="col">
+                    <strong id="absentCount" class="d-block font-display fs-2"
+                      >0</strong
+                    ><span class="countdown-label">Tidak Hadir</span>
+                  </div>
+                </div>
+                <div
+                  id="guestMessages"
+                  class="guest-list"
+                  aria-live="polite"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="py-5 text-center">
+      <p class="font-display display-6 mb-1">Laras &amp; Bagas</p>
+      <p class="small text-white-50 mb-0">
+        Terima kasih atas doa dan kehadiran Anda.
+      </p>
+    </footer>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div
+        id="notificationToast"
+        class="toast bg-white"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        <div class="d-flex">
+          <div id="toastText" class="toast-body">Berhasil.</div>
+          <button
+            type="button"
+            class="btn-close me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Tutup"
+          ></button>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
